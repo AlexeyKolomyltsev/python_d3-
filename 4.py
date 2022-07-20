@@ -24,7 +24,11 @@ def degree(deg):
 def polonomial(k):
     polinom = ""
     if k == 0:     
-        return str(random.randint(0,100)) + "=0"
-    return str(random.randint(0,100)) + 'x' + degree(k) + '+' + polonomial(k-1)
+        return str(random.randint(0,100)) + " = 0"
+    return str(random.randint(0,100)) + 'x' + degree(k) + ' + ' + polonomial(k-1)
+
+def create_file(stepen):
+    with open('file4.txt', 'a', encoding='utf-8') as my_file:
+        my_file.write(polonomial(stepen) + "\n")
 k = int(input("Введите степеть многочлена "))
-print(polonomial(k))
+create_file(k)
